@@ -57,10 +57,10 @@ class TotalTaxData extends Data implements DataTotalTaxData{
 
 
     public static function after(TotalTaxData $data): TotalTaxData{
-        $data->total ??= 0;
+        $data->total  = 0;
         $data->total += $data->ppn ?? 0;
 
-        $data->pph ??= 0;
+        $data->pph  = 0;
         $data->pph += $data->pph4 ?? 0 + $data->pph15 ?? 0  + 
                       $data->pph19 ?? 0  + $data->pph21 ?? 0  + 
                       $data->pph22 ?? 0  + $data->pph23 ?? 0  + $data->pph29 ?? 0;
